@@ -22,7 +22,7 @@ pod 'MJNetWorkKit'
 
 ## Author
 
-刘聪, jgyhc@foxmail.com.com
+刘聪, jgyhc@foxmail.com
 
 ## License
 
