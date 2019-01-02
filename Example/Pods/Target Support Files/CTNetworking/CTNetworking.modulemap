@@ -1,0 +1,6 @@
+framework module CTNetworking {
+  umbrella header "CTNetworking-umbrella.h"
+
+  export *
+  module * { export * }
+}
