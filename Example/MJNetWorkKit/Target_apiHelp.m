@@ -7,8 +7,8 @@
 //
 
 #import "Target_apiHelp.h"
-#import <YYCache/YYCache.h>
-#import <MJProgressHUD/LCProgressHUD.h>
+//#import <YYCache/YYCache.h>
+//#import <MJProgressHUD/LCProgressHUD.h>
 
 @implementation Target_apiHelp
 
@@ -29,62 +29,64 @@
 }
 
 - (id)Action_cacheData:(NSDictionary *)params {
-    id data = [params objectForKey:@"data"];
-    NSString *dataString = [params objectForKey:@"dataString"];
-    YYCache *cache = [params objectForKey:@"cache"];
-    if (!cache) {
-        BOOL isCachePath = [[params objectForKey:@"isCachePath"] boolValue];
-        if (isCachePath) {
-            NSString *cachePath = [params objectForKey:@"cachePath"];
-            cache = [[YYCache alloc] initWithPath:cachePath];
-        }else {
-            NSString *cacheName = [params objectForKey:@"cacheName"];
-            cache = [[YYCache alloc] initWithName:cacheName?cacheName:@"Base"];
-        }
-    }
-    [cache setObject:data forKey:dataString];
-    return cache;
+//    id data = [params objectForKey:@"data"];
+//    NSString *dataString = [params objectForKey:@"dataString"];
+//    YYCache *cache = [params objectForKey:@"cache"];
+//    if (!cache) {
+//        BOOL isCachePath = [[params objectForKey:@"isCachePath"] boolValue];
+//        if (isCachePath) {
+//            NSString *cachePath = [params objectForKey:@"cachePath"];
+//            cache = [[YYCache alloc] initWithPath:cachePath];
+//        }else {
+//            NSString *cacheName = [params objectForKey:@"cacheName"];
+//            cache = [[YYCache alloc] initWithName:cacheName?cacheName:@"Base"];
+//        }
+//    }
+//    [cache setObject:data forKey:dataString];
+    return nil;
 }
 
 - (id)Action_progress:(NSDictionary *)params {
-    return [[LCProgressHUD alloc] init];
+//    return [[LCProgressHUD alloc] init];
+    return nil;
 }
 
 
 - (id)Action_progressHide:(NSDictionary *)params {
-    LCProgressHUD *progress = [params objectForKey:@"progress"];
-    [progress hide];
+//    LCProgressHUD *progress = [params objectForKey:@"progress"];
+//    [progress hide];
     return nil;
 }
 
 - (id)Action_progressShow:(NSDictionary *)params {
-    LCProgressHUD *progress = [params objectForKey:@"progress"];
-    if (!progress) {
-        progress = [[LCProgressHUD alloc] init];
-    }
-    UIView *view = [params objectForKey:@"view"];
-    if (!view) {
-        view = [[UIApplication sharedApplication] keyWindow];
-    }
-    NSString *content = [params objectForKey:@"content"];
-    if (content) {
-        [LCProgressHUD showWithView:view content:content];
-    }
-    return progress;
+//    LCProgressHUD *progress = [params objectForKey:@"progress"];
+//    if (!progress) {
+//        progress = [[LCProgressHUD alloc] init];
+//    }
+//    UIView *view = [params objectForKey:@"view"];
+//    if (!view) {
+//        view = [[UIApplication sharedApplication] keyWindow];
+//    }
+//    NSString *content = [params objectForKey:@"content"];
+//    if (content) {
+//        [LCProgressHUD showWithView:view content:content];
+//    }
+    return nil;
 }
 
 - (id)Action_progressLoadingShow:(NSDictionary *)params {
-    LCProgressHUD *progress = [params objectForKey:@"progress"];
-    if (!progress) {
-        progress = [[LCProgressHUD alloc] init];
-    }
-    UIView *view = [params objectForKey:@"view"];
-    if (!view) {
-        view = [[UIApplication sharedApplication] keyWindow];
-    }
-    NSString *content = [params objectForKey:@"content"];
-    [LCProgressHUD showLoadingWithView:view content:content]
-    return progress;
+//    LCProgressHUD *progress = [params objectForKey:@"progress"];
+//    if (!progress) {
+//        progress = [[LCProgressHUD alloc] init];
+//    }
+//    UIView *view = [params objectForKey:@"view"];
+//    if (!view) {
+//        view = [[UIApplication sharedApplication] keyWindow];
+//    }
+//    NSString *content = [params objectForKey:@"content"];
+//    [LCProgressHUD showLoadingWithView:view content:content]
+//    return progress;
+    return nil;
 }
 
 

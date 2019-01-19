@@ -1,8 +1,8 @@
 {
   "name": "MJNetWorkKit",
   "version": "1.0.0",
-  "summary": "A short description of MJNetWorkKit.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "在CTNetworking基础上封装的一套网络请求框架",
+  "description": "依赖于AFNetworking、CTMediator、CTNetworking的网络请求框架，在CTNetworking基础上做了更具体更贴近业务的改动。",
   "homepage": "https://github.com/jgyhc/MJNetWorkKit",
   "license": {
     "type": "MIT",

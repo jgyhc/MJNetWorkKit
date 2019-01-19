@@ -153,7 +153,7 @@
         [self.mj_delegate failManager:manager];
     }
     if ([self isShowProgressHUDWhenFailed]) {
-        [[CTMediator sharedInstance] performTarget:@"apiHelp" action:@"progressLoadingShow" params:@{@"progress": self.progress, @"content":@"请求失败", @"view": [self progressSuperView]} shouldCacheTarget:YES];
+        [[CTMediator sharedInstance] performTarget:@"apiHelp" action:@"progressShow" params:@{@"progress": self.progress, @"content":@"请求失败", @"view": [self progressSuperView]} shouldCacheTarget:YES];
     }else {
         [[CTMediator sharedInstance] performTarget:@"apiHelp" action:@"progressHide" params:@{@"progress": self.progress} shouldCacheTarget:YES];
     }
