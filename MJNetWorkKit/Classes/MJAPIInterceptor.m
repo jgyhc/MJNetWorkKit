@@ -7,7 +7,7 @@
 
 #import "MJAPIInterceptor.h"
 #import "MJAPIBaseManager.h"
-#import "MJOauthTokenTool.h"
+//#import "MJOauthTokenTool.h"
 
 @interface MJAPIInterceptor ()
 
@@ -29,31 +29,31 @@
 }
 
 - (BOOL)manager:(CTAPIBaseManager *_Nonnull)manager shouldCallAPIWithParams:(NSDictionary *_Nullable)params {
-    MJAPIBaseManager *mjManager = (MJAPIBaseManager *)manager;
-    if ([mjManager isCheckToken]) {
-        __weak typeof(self) wself = self;
-        MJOauthTokenToolTokenStatus status = [[MJOauthTokenTool sharedInstance] isShouldRefreshWithAccessToken:@"" refreshToken:@""];
-        [self.apiPool removeAllObjects];
-        if (status == MJOauthTokenToolTokenNormal) {
-            return YES;
-        }else if (status == MJOauthTokenToolTokenReLogin) {
-            return NO;
-        }else {
-            [self.apiPool addObject:manager];
-            if (self.isLoading) {
-                return NO;
-            }
-            [[MJOauthTokenTool sharedInstance] updateTokenWithRefreshToken:@"" success:^(id  _Nullable obj) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"MJRefreshTokenNotificationKey" object:obj userInfo:nil];
-                for (CTAPIBaseManager *api in wself.apiPool) {
-                    [api loadData];
-                }
-            } failure:^(NSError * _Nullable error) {
-                
-            }];
-            return NO;
-        }
-    }
+//    MJAPIBaseManager *mjManager = (MJAPIBaseManager *)manager;
+//    if ([mjManager isCheckToken]) {
+//        __weak typeof(self) wself = self;
+//        MJOauthTokenToolTokenStatus status = [[MJOauthTokenTool sharedInstance] isShouldRefreshWithAccessToken:@"" refreshToken:@""];
+//        [self.apiPool removeAllObjects];
+//        if (status == MJOauthTokenToolTokenNormal) {
+//            return YES;
+//        }else if (status == MJOauthTokenToolTokenReLogin) {
+//            return NO;
+//        }else {
+//            [self.apiPool addObject:manager];
+//            if (self.isLoading) {
+//                return NO;
+//            }
+//            [[MJOauthTokenTool sharedInstance] updateTokenWithRefreshToken:@"" success:^(id  _Nullable obj) {
+//                [[NSNotificationCenter defaultCenter] postNotificationName:@"MJRefreshTokenNotificationKey" object:obj userInfo:nil];
+//                for (CTAPIBaseManager *api in wself.apiPool) {
+//                    [api loadData];
+//                }
+//            } failure:^(NSError * _Nullable error) {
+//                
+//            }];
+//            return NO;
+//        }
+//    }
     return YES;
 }
 

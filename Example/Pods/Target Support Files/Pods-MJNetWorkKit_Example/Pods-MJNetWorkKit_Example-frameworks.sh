@@ -157,20 +157,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CTNetworking/CTNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MJNetWorkKit/MJNetWorkKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MJOauthTokenTool/MJOauthTokenTool.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MJSecurityKit/MJSecurityKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CTNetworking/CTNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MJNetWorkKit/MJNetWorkKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MJOauthTokenTool/MJOauthTokenTool.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MJSecurityKit/MJSecurityKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

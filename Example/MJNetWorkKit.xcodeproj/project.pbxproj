@@ -338,10 +338,6 @@
 				"${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework",
 				"${BUILT_PRODUCTS_DIR}/CTNetworking/CTNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/MJNetWorkKit/MJNetWorkKit.framework",
-				"${BUILT_PRODUCTS_DIR}/MJOauthTokenTool/MJOauthTokenTool.framework",
-				"${BUILT_PRODUCTS_DIR}/MJSecurityKit/MJSecurityKit.framework",
-				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
-				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -349,10 +345,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTMediator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJNetWorkKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJOauthTokenTool.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJSecurityKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

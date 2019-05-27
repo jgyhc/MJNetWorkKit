@@ -18,20 +18,10 @@ PODS:
   - CTNetworking (14):
     - AFNetworking
     - CTMediator
-  - MJNetWorkKit (1.1.0):
+  - MJNetWorkKit (1.1.1):
     - AFNetworking
     - CTMediator
     - CTNetworking
-    - MJOauthTokenTool
-  - MJOauthTokenTool (0.1.2):
-    - AFNetworking
-    - CTMediator
-    - MJSecurityKit
-    - YYCache
-    - YYModel
-  - MJSecurityKit (0.1.1)
-  - YYCache (1.0.4)
-  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - MJNetWorkKit (from `../`)
@@ -41,10 +31,6 @@ SPEC REPOS:
     - AFNetworking
     - CTMediator
     - CTNetworking
-    - MJOauthTokenTool
-    - MJSecurityKit
-    - YYCache
-    - YYModel
 
 EXTERNAL SOURCES:
   MJNetWorkKit:
@@ -54,11 +40,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
   CTNetworking: 1d76c25dc81eec59744a31559959522319020b81
-  MJNetWorkKit: fc1ee1e17f14b5fc4ecacbf6eccd911c96d5ac0b
-  MJOauthTokenTool: c347ab5455346489e195da9c406aa74df547b884
-  MJSecurityKit: 174e73fac0ffd7248dbc6bd326a52fcc69a99472
-  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
-  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  MJNetWorkKit: c4aa4b1d1683ecdf5f7f64e3e994b55949961280
 
 PODFILE CHECKSUM: 62a771b321136016d837350e89b5940634a82776
 
