@@ -147,6 +147,10 @@
         //        result[kCTApiProxyValidateResultKeyResponseString] = responseObject;
         result[kCTApiProxyValidateResultKeyResponseObject] = responseObject;
     }
+    NSInteger code = [[responseObject objectForKey:[self codeString]] integerValue];
+    if (code == [self loginFailureCode]) {
+        [[CTMediator sharedInstance] performTarget:@"networkconfiguration" action:@"resetLogin" params:nil shouldCacheTarget:YES];
+    }
     return result;
 }
 
