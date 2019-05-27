@@ -1,0 +1,6 @@
+framework module MJOauthTokenTool {
+  umbrella header "MJOauthTokenTool-umbrella.h"
+
+  export *
+  module * { export * }
+}

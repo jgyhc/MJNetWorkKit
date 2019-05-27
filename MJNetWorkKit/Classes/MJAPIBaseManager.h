@@ -57,4 +57,7 @@
 /** ProgressHUD的父视图  默认是window */
 - (UIView *)progressSuperView;
 
+/** 是否检查token是否有效 默认不检查 */
+- (BOOL)isCheckToken;
+
 @end

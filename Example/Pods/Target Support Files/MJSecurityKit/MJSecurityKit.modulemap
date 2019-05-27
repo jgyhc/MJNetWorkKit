@@ -1,0 +1,6 @@
+framework module MJSecurityKit {
+  umbrella header "MJSecurityKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

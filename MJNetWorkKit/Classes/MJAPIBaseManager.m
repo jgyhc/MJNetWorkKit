@@ -11,7 +11,7 @@
 #import "MJService.h"
 #import <CTNetworking/CTServiceFactory.h>
 #import <CTMediator/CTMediator.h>
-
+#import "MJAPIInterceptor.h"
 
 @interface MJAPIBaseManager ()<CTAPIManagerValidator, CTAPIManagerCallBackDelegate, CTAPIManagerParamSource>
 
@@ -40,6 +40,7 @@
     if (self) {
         self.validator = self;
         self.delegate = self;
+        self.interceptor = [MJAPIInterceptor sharedInstance];
     }
     return self;
 }
@@ -199,6 +200,10 @@
 
 - (NSString *)cachePath {
     return [self getDocumentPathWithFirstName:@"Base"];
+}
+
+- (BOOL)isCheckToken {
+    return NO;
 }
 
 - (BOOL)isNeedFieldEncrypted {

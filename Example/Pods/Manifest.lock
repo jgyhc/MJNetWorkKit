@@ -18,14 +18,22 @@ PODS:
   - CTNetworking (14):
     - AFNetworking
     - CTMediator
-  - Kiwi (3.0.0)
-  - MJNetWorkKit (1.0.0):
+  - MJNetWorkKit (1.1.0):
     - AFNetworking
     - CTMediator
     - CTNetworking
+    - MJOauthTokenTool
+  - MJOauthTokenTool (0.1.2):
+    - AFNetworking
+    - CTMediator
+    - MJSecurityKit
+    - YYCache
+    - YYModel
+  - MJSecurityKit (0.1.1)
+  - YYCache (1.0.4)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
-  - Kiwi
   - MJNetWorkKit (from `../`)
 
 SPEC REPOS:
@@ -33,7 +41,10 @@ SPEC REPOS:
     - AFNetworking
     - CTMediator
     - CTNetworking
-    - Kiwi
+    - MJOauthTokenTool
+    - MJSecurityKit
+    - YYCache
+    - YYModel
 
 EXTERNAL SOURCES:
   MJNetWorkKit:
@@ -43,9 +54,12 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
   CTNetworking: 1d76c25dc81eec59744a31559959522319020b81
-  Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
-  MJNetWorkKit: d1cabbb65484e2a0b0d811dfb68f83a5aac52e28
+  MJNetWorkKit: fc1ee1e17f14b5fc4ecacbf6eccd911c96d5ac0b
+  MJOauthTokenTool: c347ab5455346489e195da9c406aa74df547b884
+  MJSecurityKit: 174e73fac0ffd7248dbc6bd326a52fcc69a99472
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 731116564b7fd5a3c8fd12c89816be616028844b
+PODFILE CHECKSUM: 62a771b321136016d837350e89b5940634a82776
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0
