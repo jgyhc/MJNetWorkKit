@@ -1,8 +1,8 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/CTMediator" "${PODS_CONFIGURATION_BUILD_DIR}/CTNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/MJNetWorkKit"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/CTMediator" "${PODS_CONFIGURATION_BUILD_DIR}/CTNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/MJNetWorkKit" "${PODS_CONFIGURATION_BUILD_DIR}/MJProgressHUD" "${PODS_ROOT}/Bugly" "${PODS_ROOT}/UMCAnalytics" "${PODS_ROOT}/UMCCommon"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CTMediator/CTMediator.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CTNetworking/CTNetworking.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/MJNetWorkKit/MJNetWorkKit.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CTMediator/CTMediator.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CTNetworking/CTNetworking.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/MJNetWorkKit/MJNetWorkKit.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/MJProgressHUD/MJProgressHUD.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "CTMediator" -framework "CTNetworking" -framework "CoreGraphics" -framework "MJNetWorkKit" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"sqlite3" -l"z" -framework "AFNetworking" -framework "Bugly" -framework "CTMediator" -framework "CTNetworking" -framework "CoreGraphics" -framework "CoreTelephony" -framework "MJNetWorkKit" -framework "MJProgressHUD" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration" -framework "UIKit" -framework "UMAnalytics" -framework "UMCommon"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

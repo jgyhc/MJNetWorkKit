@@ -7,13 +7,35 @@
 //
 
 #import "MJAppDelegate.h"
+#import <Bugly/Bugly.h>
+#import <UMCommon/UMCommon.h>//友盟
+//#import <UMCommonLog/UMCommonLogHeaders.h>
+@interface MJAppDelegate ()<BuglyDelegate>
+
+@end
 
 @implementation MJAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+        BuglyConfig *buglyConfig = [[BuglyConfig alloc] init];
+        buglyConfig.debugMode = YES;
+        buglyConfig.blockMonitorEnable = YES;
+        buglyConfig.delegate = self;
+        buglyConfig.reportLogLevel = BuglyLogLevelWarn;
+
+
+        [Bugly startWithAppId:@"1b7b26f079" developmentDevice:YES config:buglyConfig];
+    #pragma mark -- 友盟
+//    [UMConfigure initWithAppkey:@"596c25581061d24e37000211" channel:@"App Store"];
+    //开发者需要显式的调用此函数，日志系统才能工作
+//    [UMCommonLogManager setUpUMCommonLogManager];
     return YES;
+}
+
+- (NSString * BLY_NULLABLE)attachmentForException:(NSException * BLY_NULLABLE)exception {
+    return nil;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

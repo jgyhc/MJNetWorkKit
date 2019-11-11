@@ -38,7 +38,13 @@
 }
 
 - (NSDictionary *_Nullable)paramsForApi:(CTAPIBaseManager *_Nonnull)manager {
-    return nil;
+    return @{
+      @"password" : @"n1zYau34qdJux4toawlDBTw4tC9QcQk\/M6na\/jBtK+wLLWVCiHqHcNPSScn6I5xGBWKLENMlU4SyLUNoDxo2zs29fadZtyJhLSi5F2DKmr7wvP8lwEXkgrA24B5E2aQ9a3CqgI56eWEMrGuZrPd0pVYgA40oMhHFSk+BTg361Rc=",
+      @"code" : @"3333",
+      @"mobile" : @"15923694353",
+      @"device" : @"6.15.10",
+      @"shareCode" : @""
+    };
 }
 
 - (UserLoginAPI *)userLoginAPI {

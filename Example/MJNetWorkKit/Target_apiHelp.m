@@ -7,8 +7,9 @@
 //
 
 #import "Target_apiHelp.h"
+#import "MJAPIInterceptor.h"
 //#import <YYCache/YYCache.h>
-//#import <MJProgressHUD/LCProgressHUD.h>
+#import <LCProgressHUD.h>
 
 @implementation Target_apiHelp
 
@@ -47,47 +48,50 @@
 }
 
 - (id)Action_progress:(NSDictionary *)params {
-//    return [[LCProgressHUD alloc] init];
-    return nil;
+    return [[LCProgressHUD alloc] init];
+//    return nil;
 }
 
 
 - (id)Action_progressHide:(NSDictionary *)params {
-//    LCProgressHUD *progress = [params objectForKey:@"progress"];
-//    [progress hide];
+    LCProgressHUD *progress = [params objectForKey:@"progress"];
+    [progress hide];
     return nil;
 }
 
 - (id)Action_progressShow:(NSDictionary *)params {
-//    LCProgressHUD *progress = [params objectForKey:@"progress"];
-//    if (!progress) {
-//        progress = [[LCProgressHUD alloc] init];
-//    }
-//    UIView *view = [params objectForKey:@"view"];
-//    if (!view) {
-//        view = [[UIApplication sharedApplication] keyWindow];
-//    }
-//    NSString *content = [params objectForKey:@"content"];
-//    if (content) {
-//        [LCProgressHUD showWithView:view content:content];
-//    }
+    LCProgressHUD *progress = [params objectForKey:@"progress"];
+    if (!progress) {
+        progress = [[LCProgressHUD alloc] init];
+    }
+    UIView *view = [params objectForKey:@"view"];
+    if (!view) {
+        view = [[UIApplication sharedApplication] keyWindow];
+    }
+    NSString *content = [params objectForKey:@"content"];
+    if (content) {
+        [LCProgressHUD showWithView:view content:content];
+    }
     return nil;
 }
 
 - (id)Action_progressLoadingShow:(NSDictionary *)params {
-//    LCProgressHUD *progress = [params objectForKey:@"progress"];
-//    if (!progress) {
-//        progress = [[LCProgressHUD alloc] init];
-//    }
-//    UIView *view = [params objectForKey:@"view"];
-//    if (!view) {
-//        view = [[UIApplication sharedApplication] keyWindow];
-//    }
-//    NSString *content = [params objectForKey:@"content"];
-//    [LCProgressHUD showLoadingWithView:view content:content]
-//    return progress;
-    return nil;
+    LCProgressHUD *progress = [params objectForKey:@"progress"];
+    if (!progress) {
+        progress = [[LCProgressHUD alloc] init];
+    }
+    UIView *view = [params objectForKey:@"view"];
+    if (!view) {
+        view = [[UIApplication sharedApplication] keyWindow];
+    }
+    NSString *content = [params objectForKey:@"content"];
+    [LCProgressHUD showLoadingWithView:view content:content];
+    return progress;
+//    return nil;
 }
 
+- (id)Action_interceptor:(NSDictionary *)params {
+    return [MJAPIInterceptor sharedInstance];
+}
 
 @end

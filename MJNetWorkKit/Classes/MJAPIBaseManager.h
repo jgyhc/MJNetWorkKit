@@ -60,4 +60,12 @@
 /** 是否检查token是否有效 默认不检查 */
 - (BOOL)isCheckToken;
 
+- (BOOL)isNeedFieldEncrypted;
+
+- (NSArray *)encryptedFields;
+
+@property (nonatomic, strong) id cache;
+
+@property (nonatomic, strong) id progress;
+
 @end

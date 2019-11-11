@@ -4,10 +4,13 @@ platform :ios, '8.0'
 
 target 'MJNetWorkKit_Example' do
   pod 'MJNetWorkKit', :path => '../'
-
+  pod 'MJProgressHUD'
+  pod 'Bugly'
+  pod 'UMCAnalytics'
   target 'MJNetWorkKit_Tests' do
     inherit! :search_paths
 
 #    pod 'Kiwi'
+  
   end
 end

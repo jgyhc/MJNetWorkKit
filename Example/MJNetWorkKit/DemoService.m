@@ -12,17 +12,16 @@
 
 /** baseUrl */
 - (NSString *)apiBaseUrl {
-    return @"http://192.168.0.30:8769";
+    return @"http://zuul.manjiwang.com";
 }
 
-/** 网关 */
+/**
+ 重写父类方法
+
+ @return 服务名
+ */
 - (NSString *)apiGatewayKey {
-    return @"apphomepage";
-}
-
-/** 正常结果的code值 */
-- (NSInteger)normalResultsCode {
-    return 1;
+    return @"APIForWAPUI";
 }
 
 /** 状态码默认的key */
@@ -39,5 +38,4 @@
 - (NSString *)dataString {
     return @"data";
 }
-
 @end

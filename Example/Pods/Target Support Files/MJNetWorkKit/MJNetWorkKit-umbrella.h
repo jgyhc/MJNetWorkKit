@@ -11,7 +11,6 @@
 #endif
 
 #import "MJAPIBaseManager.h"
-#import "MJAPIInterceptor.h"
 #import "MJService.h"
 #import "Target_MJService.h"
 
