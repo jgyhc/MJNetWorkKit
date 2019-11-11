@@ -73,6 +73,22 @@
 }
 
 - (NSDictionary *)reformParams:(NSDictionary *)params {
+    //是否需要对个别字段进行RSA加密
+    if ([self isNeedFieldEncrypted]) {
+        NSMutableDictionary *mutabkeParams = [self dealParams:params].mutableCopy;
+        NSArray *keys = [self encryptedFields];
+        [keys enumerateObjectsUsingBlock:^(NSString *  _Nonnull key, NSUInteger idx, BOOL * _Nonnull stop) {
+            id value = [mutabkeParams objectForKey:key];
+            if (value && [value isKindOfClass:[NSString class]]) {
+                NSString *publicKey = [[CTMediator sharedInstance] performTarget:@"apiHelp" action:@"fieldPublicKey" params:nil shouldCacheTarget:YES];
+                
+                [mutabkeParams setObject:[[CTMediator sharedInstance] performTarget:@"apiHelp" action:@"RSAEncryptor" params:@{@"value": value,
+                                                                                                                               @"publicKey":publicKey
+                                                                                                                               } shouldCacheTarget:YES] forKey:key];
+            }
+        }];
+        return [self dealParams:mutabkeParams];
+    }
     return [self dealParams:params];
 }
 

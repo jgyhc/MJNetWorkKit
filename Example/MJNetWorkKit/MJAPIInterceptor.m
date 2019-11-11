@@ -43,9 +43,8 @@
             [[CTMediator sharedInstance] performTarget:@"apiHelp" action:@"progressHide" params:@{@"progress": manager.progress} shouldCacheTarget:YES];
         }
     }
-    //记录异常
      #if RELEASE
-                   //记录异常
+        //记录异常
         NSString *name = [manager methodName];
         NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
 
@@ -92,22 +91,7 @@
     if ([manager isShowProgressHUD] && manager.progress) {
         [[CTMediator sharedInstance] performTarget:@"apiHelp" action:@"progressLoadingShow" params:@{@"progress": manager.progress, @"content":[manager loadingText]} shouldCacheTarget:YES];
     }
-    //是否需要对个别字段进行RSA加密
-    if ([manager isNeedFieldEncrypted]) {
-        NSMutableDictionary *mutabkeParams = [manager dealParams:params].mutableCopy;
-        NSArray *keys = [manager encryptedFields];
-        [keys enumerateObjectsUsingBlock:^(NSString *  _Nonnull key, NSUInteger idx, BOOL * _Nonnull stop) {
-            id value = [mutabkeParams objectForKey:key];
-            if (value && [value isKindOfClass:[NSString class]]) {
-                NSString *publicKey = [[CTMediator sharedInstance] performTarget:@"apiHelp" action:@"fieldPublicKey" params:nil shouldCacheTarget:YES];
-                
-                [mutabkeParams setObject:[[CTMediator sharedInstance] performTarget:@"apiHelp" action:@"RSAEncryptor" params:@{@"value": value,
-                                                                                                                               @"publicKey":publicKey
-                                                                                                                               } shouldCacheTarget:YES] forKey:key];
-            }
-        }];
-        return mutabkeParams;
-    }
+
     
     
     
