@@ -85,6 +85,15 @@
     return [[CTMediator sharedInstance] performTarget:@"networkconfiguration" action:@"dataString" params:nil shouldCacheTarget:YES];
 }
 
+/** cer证书的路径 */
+- (NSString *)certificatesPath {
+    return [[CTMediator sharedInstance] performTarget:@"networkconfiguration" action:@"certificatesPath" params:nil shouldCacheTarget:YES];
+}
+
+- (NSString *)clientAuthenticationPath {
+    return [[CTMediator sharedInstance] performTarget:@"networkconfiguration" action:@"clientAuthenticationPath" params:nil shouldCacheTarget:YES];
+}
+
 #pragma mark - public methods
 - (NSURLRequest *)requestWithParams:(NSDictionary *)params methodName:(NSString *)methodName requestType:(CTAPIManagerRequestType)requestType {
     NSString *urlString = [self urlGeneratingRuleByMethodName:methodName];
@@ -163,6 +172,37 @@
     }
     return YES;
 }
+
+- (AFSecurityPolicy*)getSecurityPolicy {
+    NSString *cerPath = [self certificatesPath];
+    NSData *certData = [NSData dataWithContentsOfFile:cerPath];
+    if (certData) {
+        NSSet *certSet = [NSSet setWithObject:certData];
+        AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+        policy.allowInvalidCertificates = YES;
+        policy.validatesDomainName = NO;
+        policy.pinnedCertificates = certSet;
+        return policy;
+    }
+    /**** SSL Pinning ****/
+    return nil;
+}
+
+- (AFHTTPSessionManager *)sessionManager {
+    AFHTTPSessionManager *manager = nil;
+    NSURL *baseURL = [NSURL URLWithString:[self apiBaseUrl]];
+    if (baseURL) {
+        manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
+    }else {
+        manager = [AFHTTPSessionManager manager];
+    }
+    if ([[self apiBaseUrl] containsString:@"https"]) {
+        manager.securityPolicy = [self getSecurityPolicy];
+    }
+    return manager;
+}
+
+
 
 - (AFHTTPRequestSerializer *)httpRequestSerializer {
     if (_httpRequestSerializer == nil) {

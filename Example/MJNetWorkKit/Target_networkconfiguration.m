@@ -11,7 +11,7 @@
 @implementation Target_networkconfiguration
 
 - (id)Action_apiBaseUrl:(NSDictionary *)params {
-    return @"";
+    return @"https://zuul.manjiwangtest.com";
 }
 
 - (id)Action_gatewayKey:(NSDictionary *)params {
@@ -61,5 +61,16 @@
 - (id)Action_otherFailure:(NSDictionary *)params {
     return @(NO);
 }
+
+- (id)Action_certificatesPath:(NSDictionary *)params {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"server" ofType:@"cer"];
+    return path;
+}
+
+- (id)Action_clientAuthenticationPath:(NSDictionary *)params {
+    return [[NSBundle mainBundle] pathForResource:@"manjiwangtest" ofType:@"p12"];
+}
+
+
 
 @end

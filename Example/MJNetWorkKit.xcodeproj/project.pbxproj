@@ -28,6 +28,9 @@
 		7E3DF3D821DC5C6C00B10F8A /* UserLoginAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3DF3D721DC5C6C00B10F8A /* UserLoginAPI.m */; };
 		7E3DF3DB21DC5D9500B10F8A /* Target_DemoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3DF3DA21DC5D9500B10F8A /* Target_DemoService.m */; };
 		7E3EECF921DC6CF200F1F141 /* Target_CTAppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3EECF821DC6CF200F1F141 /* Target_CTAppContext.m */; };
+		7E7DC52E24EA8DB80073D030 /* manjiwangtest.cer in Resources */ = {isa = PBXBuildFile; fileRef = 7E7DC52C24EA8DB80073D030 /* manjiwangtest.cer */; };
+		7E7DC52F24EA8DB80073D030 /* manjiwangtest.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 7E7DC52D24EA8DB80073D030 /* manjiwangtest.p12 */; };
+		7E7DC53124EAB0A80073D030 /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = 7E7DC53024EAB0A80073D030 /* server.cer */; };
 		7EE336A121D5CF230032BDBD /* Target_networkconfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE336A021D5CF230032BDBD /* Target_networkconfiguration.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		F167A924FDC1580B6C07EC53 /* Pods_MJNetWorkKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13CDAD1565F46D7FE09D1F65 /* Pods_MJNetWorkKit_Tests.framework */; };
@@ -80,6 +83,9 @@
 		7E3DF3DA21DC5D9500B10F8A /* Target_DemoService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_DemoService.m; sourceTree = "<group>"; };
 		7E3EECF721DC6CF200F1F141 /* Target_CTAppContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Target_CTAppContext.h; sourceTree = "<group>"; };
 		7E3EECF821DC6CF200F1F141 /* Target_CTAppContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Target_CTAppContext.m; sourceTree = "<group>"; };
+		7E7DC52C24EA8DB80073D030 /* manjiwangtest.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = manjiwangtest.cer; sourceTree = "<group>"; };
+		7E7DC52D24EA8DB80073D030 /* manjiwangtest.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = manjiwangtest.p12; sourceTree = "<group>"; };
+		7E7DC53024EAB0A80073D030 /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.cer; sourceTree = "<group>"; };
 		7EE3369F21D5CF230032BDBD /* Target_networkconfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_networkconfiguration.h; sourceTree = "<group>"; };
 		7EE336A021D5CF230032BDBD /* Target_networkconfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_networkconfiguration.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -164,28 +170,31 @@
 		6003F593195388D20070C39A /* Example for MJNetWorkKit */ = {
 			isa = PBXGroup;
 			children = (
-				6003F59C195388D20070C39A /* MJAppDelegate.h */,
-				6003F59D195388D20070C39A /* MJAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* MJViewController.h */,
-				6003F5A6195388D20070C39A /* MJViewController.m */,
-				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
-				6003F5A8195388D20070C39A /* Images.xcassets */,
-				6003F594195388D20070C39A /* Supporting Files */,
-				7EE3369F21D5CF230032BDBD /* Target_networkconfiguration.h */,
-				7EE336A021D5CF230032BDBD /* Target_networkconfiguration.m */,
-				7E3DF3D021DC54C800B10F8A /* Target_apiHelp.h */,
-				7E3DF3D121DC54C800B10F8A /* Target_apiHelp.m */,
 				7E3DF3D321DC58E900B10F8A /* DemoService.h */,
+				7E3DF3D421DC58E900B10F8A /* DemoService.m */,
+				6003F5A8195388D20070C39A /* Images.xcassets */,
+				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				7E7DC52C24EA8DB80073D030 /* manjiwangtest.cer */,
+				7E7DC52D24EA8DB80073D030 /* manjiwangtest.p12 */,
 				7E3916C22376957C00375AB6 /* MJAPIInterceptor.h */,
 				7E3916C12376957C00375AB6 /* MJAPIInterceptor.m */,
-				7E3DF3D421DC58E900B10F8A /* DemoService.m */,
-				7E3DF3D621DC5C6C00B10F8A /* UserLoginAPI.h */,
-				7E3DF3D721DC5C6C00B10F8A /* UserLoginAPI.m */,
-				7E3DF3D921DC5D9500B10F8A /* Target_DemoService.h */,
-				7E3DF3DA21DC5D9500B10F8A /* Target_DemoService.m */,
+				6003F59C195388D20070C39A /* MJAppDelegate.h */,
+				6003F59D195388D20070C39A /* MJAppDelegate.m */,
+				6003F5A5195388D20070C39A /* MJViewController.h */,
+				6003F5A6195388D20070C39A /* MJViewController.m */,
+				7E7DC53024EAB0A80073D030 /* server.cer */,
+				6003F594195388D20070C39A /* Supporting Files */,
+				7E3DF3D021DC54C800B10F8A /* Target_apiHelp.h */,
+				7E3DF3D121DC54C800B10F8A /* Target_apiHelp.m */,
 				7E3EECF721DC6CF200F1F141 /* Target_CTAppContext.h */,
 				7E3EECF821DC6CF200F1F141 /* Target_CTAppContext.m */,
+				7E3DF3D921DC5D9500B10F8A /* Target_DemoService.h */,
+				7E3DF3DA21DC5D9500B10F8A /* Target_DemoService.m */,
+				7EE3369F21D5CF230032BDBD /* Target_networkconfiguration.h */,
+				7EE336A021D5CF230032BDBD /* Target_networkconfiguration.m */,
+				7E3DF3D621DC5C6C00B10F8A /* UserLoginAPI.h */,
+				7E3DF3D721DC5C6C00B10F8A /* UserLoginAPI.m */,
 			);
 			name = "Example for MJNetWorkKit";
 			path = MJNetWorkKit;
@@ -315,10 +324,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E7DC53124EAB0A80073D030 /* server.cer in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				7E7DC52F24EA8DB80073D030 /* manjiwangtest.p12 in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				7E7DC52E24EA8DB80073D030 /* manjiwangtest.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

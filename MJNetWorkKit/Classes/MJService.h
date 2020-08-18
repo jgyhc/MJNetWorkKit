@@ -40,6 +40,8 @@
 /** 数据默认的key */
 - (NSString *)dataString;
 
+/** cer证书的路径 */
+- (NSString *)certificatesPath;
 
 
 @end

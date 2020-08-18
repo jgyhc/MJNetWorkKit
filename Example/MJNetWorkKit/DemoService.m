@@ -11,9 +11,9 @@
 @implementation DemoService
 
 /** baseUrl */
-- (NSString *)apiBaseUrl {
-    return @"http://zuul.manjiwang.com";
-}
+//- (NSString *)apiBaseUrl {
+//    return @"http://zuul.manjiwang.com";
+//}
 
 /**
  重写父类方法

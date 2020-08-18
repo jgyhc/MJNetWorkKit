@@ -28,5 +28,9 @@
     return CTAPIManagerRequestTypePost;
 }
 
+- (BOOL)isShowProgressHUD {
+    return NO;
+}
+
 
 @end
