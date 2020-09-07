@@ -60,6 +60,10 @@
 /** 是否检查token是否有效 默认不检查 */
 - (BOOL)isCheckToken;
 
+/** rsa参数加密的公钥 */
+- (NSString *)rsaPublicKey;
+
+/** 是否要对参数进行rsa加密 */
 - (BOOL)isNeedFieldEncrypted;
 
 - (NSArray *)encryptedFields;
@@ -67,5 +71,6 @@
 @property (nonatomic, strong) id cache;
 
 @property (nonatomic, strong) id progress;
+
 
 @end

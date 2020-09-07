@@ -80,7 +80,7 @@
         [keys enumerateObjectsUsingBlock:^(NSString *  _Nonnull key, NSUInteger idx, BOOL * _Nonnull stop) {
             id value = [mutabkeParams objectForKey:key];
             if (value && [value isKindOfClass:[NSString class]]) {
-                NSString *publicKey = [[CTMediator sharedInstance] performTarget:@"apiHelp" action:@"fieldPublicKey" params:nil shouldCacheTarget:YES];
+                NSString *publicKey = [self rsaPublicKey];
                 
                 [mutabkeParams setObject:[[CTMediator sharedInstance] performTarget:@"apiHelp" action:@"RSAEncryptor" params:@{@"value": value,
                                                                                                                                @"publicKey":publicKey
@@ -166,6 +166,10 @@
 
 - (BOOL)isNeedFieldEncrypted {
     return NO;
+}
+
+- (NSString *)rsaPublicKey {
+    return [[CTMediator sharedInstance] performTarget:@"apiHelp" action:@"fieldPublicKey" params:nil shouldCacheTarget:YES];
 }
 
 - (NSArray *)encryptedFields {
