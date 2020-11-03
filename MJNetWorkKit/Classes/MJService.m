@@ -94,6 +94,10 @@
     return [[CTMediator sharedInstance] performTarget:@"networkconfiguration" action:@"clientAuthenticationPath" params:nil shouldCacheTarget:YES];
 }
 
+- (BOOL)isAddSecurityPolicy {
+    return [[[CTMediator sharedInstance] performTarget:@"networkconfiguration" action:@"isAddSecurityPolicy" params:nil shouldCacheTarget:YES] boolValue];
+}
+
 #pragma mark - public methods
 - (NSURLRequest *)requestWithParams:(NSDictionary *)params methodName:(NSString *)methodName requestType:(CTAPIManagerRequestType)requestType {
     NSString *urlString = [self urlGeneratingRuleByMethodName:methodName];
@@ -196,7 +200,7 @@
     }else {
         manager = [AFHTTPSessionManager manager];
     }
-    if ([[self apiBaseUrl] containsString:@"https"]) {
+    if ([[self apiBaseUrl] containsString:@"https"] && [self isAddSecurityPolicy]) {
         manager.securityPolicy = [self getSecurityPolicy];
     }
     return manager;
