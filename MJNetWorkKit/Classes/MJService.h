@@ -25,8 +25,14 @@
 /** 请求方需要添加的字段 */
 - (NSDictionary *)extraHttpHeadParmas;
 
-/** 登录失效的错误码 */
-- (NSInteger)loginFailureCode;
+/** 是否需要重新登录 */
+- (BOOL)isNeedReLoginWithCode:(NSInteger)code;
+
+/** 是否需要刷新token */
+- (BOOL)isRefreshTokenWithCode:(NSInteger)code;
+
+/** 需要刷新token的错误码 */
+- (NSInteger)refreshTokenCode;
 
 /** 正常结果的code值 */
 - (NSInteger)normalResultsCode;

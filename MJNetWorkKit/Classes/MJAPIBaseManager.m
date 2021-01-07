@@ -124,6 +124,13 @@
 
 #pragma mark - CTAPIManagerValidator
 - (CTAPIManagerErrorType)manager:(CTAPIBaseManager *_Nonnull)manager isCorrectWithCallBackData:(NSDictionary *_Nullable)data {
+    NSInteger code = [[data objectForKey:[self.service codeString]] integerValue];
+    if ([self.service isRefreshTokenWithCode:code]) {
+        return CTAPIManagerErrorTypeNeedAccessToken;
+    }
+    if ([self.service isNeedReLoginWithCode:code]) {
+        return CTAPIManagerErrorTypeNeedLogin;
+    }
     return CTAPIManagerErrorTypeNoError;
 }
 

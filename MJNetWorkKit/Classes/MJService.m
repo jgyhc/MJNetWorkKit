@@ -61,9 +61,13 @@
     return dic;
 }
 
-- (NSInteger)loginFailureCode {
-    NSInteger code = [[[CTMediator sharedInstance] performTarget:@"networkconfiguration" action:@"loginFailureCode" params:nil shouldCacheTarget:YES] integerValue];
-    return code;
+- (BOOL)isNeedReLoginWithCode:(NSInteger)code {
+    return [[[CTMediator sharedInstance] performTarget:@"networkconfiguration" action:@"isNeedReLogin" params:nil shouldCacheTarget:YES] boolValue];
+}
+
+/** 是否需要刷新token */
+- (BOOL)isRefreshTokenWithCode:(NSInteger)code {
+    return [[[CTMediator sharedInstance] performTarget:@"networkconfiguration" action:@"isRefreshToken" params:@{@"code": @(code)} shouldCacheTarget:YES] boolValue];
 }
 
 - (NSInteger)normalResultsCode {
@@ -160,21 +164,14 @@
         //        result[kCTApiProxyValidateResultKeyResponseString] = responseObject;
         result[kCTApiProxyValidateResultKeyResponseObject] = responseObject;
     }
-    NSInteger code = [[responseObject objectForKey:[self codeString]] integerValue];
-    if (code == [self loginFailureCode]) {
-        [[CTMediator sharedInstance] performTarget:@"networkconfiguration" action:@"resetLogin" params:nil shouldCacheTarget:YES];
-    }
     return result;
 }
 
 - (BOOL)handleCommonErrorWithResponse:(CTURLResponse *)response manager:(CTAPIBaseManager *)manager errorType:(CTAPIManagerErrorType)errorType {
     NSInteger code = [[response.content objectForKey:[self codeString]] integerValue];
-    if (code == [self loginFailureCode]) {
-        return [[[CTMediator sharedInstance] performTarget:@"networkconfiguration" action:@"resetLogin" params:nil shouldCacheTarget:YES] boolValue];
-    }else {
-        return [[[CTMediator sharedInstance] performTarget:@"networkconfiguration" action:@"otherFailure" params:nil shouldCacheTarget:YES] boolValue];
-    }
-    return YES;
+    return [[[CTMediator sharedInstance] performTarget:@"networkconfiguration" action:@"otherFailure" params:@{
+        @"code": @(code)
+    } shouldCacheTarget:YES] boolValue];
 }
 
 - (AFSecurityPolicy*)getSecurityPolicy {
