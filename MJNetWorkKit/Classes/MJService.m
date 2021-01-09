@@ -62,7 +62,7 @@
 }
 
 - (BOOL)isNeedReLoginWithCode:(NSInteger)code {
-    return [[[CTMediator sharedInstance] performTarget:@"networkconfiguration" action:@"isNeedReLogin" params:nil shouldCacheTarget:YES] boolValue];
+    return [[[CTMediator sharedInstance] performTarget:@"networkconfiguration" action:@"isNeedReLogin" params:@{@"code": @(code)} shouldCacheTarget:YES] boolValue];
 }
 
 /** 是否需要刷新token */
